@@ -181,6 +181,13 @@ public class Puzzle3 : MonoBehaviour
     VoltSlot pOut;
     VoltSlot secIn;
     VoltSlot secOut;
+    VoltSlotMulti shared;
+
+    public int sharedIn = 30;
+    public int sharedOut = 30;
+
+    public int vPOut = 30;
+    public int vSecOut = 12;
 
     bool TestSlot(VoltSlot testSlot)
     {
@@ -213,6 +220,20 @@ public class Puzzle3 : MonoBehaviour
         return false;
     }
 
+    private void OnValidate()
+    {
+        if (shared != null)
+        {
+            shared.component.voltIn = sharedIn;
+            shared.component.voltOut = sharedOut;
+
+            pOut.component.voltIn = vPOut;
+            secOut.component.voltIn = vSecOut;
+
+            Test();
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -224,7 +245,7 @@ public class Puzzle3 : MonoBehaviour
         endSlots.Add(pOut);
         endSlots.Add(secOut);
 
-        VoltSlotMulti shared = new(30, 30);
+        shared = new(30, 30);
 
         pIn.NextSlot(625, 30).NextSlot(30, 30).NextSlot(shared).NextSlot(pOut); // shared = 3rd nextslot
 
@@ -249,10 +270,27 @@ public class Puzzle3 : MonoBehaviour
 
         while (slot.next != null)
         {
+            VoltSlot nextSlot = slot.next;
+            if (slot == shared) nextSlot = pOut;
+
+            if (slot.component.voltOut == nextSlot.component.voltIn) Gizmos.color = Color.green;
+            else Gizmos.color = Color.red;
+
+            Handles.Label(transform.position + Vector3.right * i, $"VIn:{slot.component.voltIn}\nVOut:{slot.component.voltOut}\nID:{slot.ID}");
+
             Gizmos.DrawLine(transform.position + Vector3.right * i, transform.position + Vector3.right * (i+1));
-            slot = slot.next;
+
+            if (slot == shared)
+            {
+                slot = pOut;
+            }
+            else slot = slot.next;
+
+            //slot = slot.next;
             i++;
         }
+
+        Handles.Label(transform.position + Vector3.right * i, $"VIn:{slot.component.voltIn}\nVOut:{slot.component.voltOut}\nID:{slot.ID}");
 
         slot = secIn;
 
@@ -260,9 +298,18 @@ public class Puzzle3 : MonoBehaviour
 
         while (slot.next != null)
         {
+            if (slot.component.voltOut == slot.next.component.voltIn) Gizmos.color = Color.green;
+            else Gizmos.color = Color.red;
+
+            Handles.Label(transform.position + Vector3.up * 1 + Vector3.right * i, $"VIn:{slot.component.voltIn}\nVOut:{slot.component.voltOut}\nID:{slot.ID}");
+
             Gizmos.DrawLine(transform.position + Vector3.up * 1 + Vector3.right * i, transform.position + Vector3.up * 1 + Vector3.right * (i + 1));
+
             slot = slot.next;
+
             i++;
         }
+
+        Handles.Label(transform.position + Vector3.up * 1 + Vector3.right * i, $"VIn:{slot.component.voltIn}\nVOut:{slot.component.voltOut}\nID:{slot.ID}");
     }
 }
