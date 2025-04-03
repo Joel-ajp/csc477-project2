@@ -51,10 +51,11 @@ MonoBehaviour:
   currentEditor: 
   materials:
   - {fileID: 2100000, guid: 3779a430415ab1948aa398f3c6e83e2a, type: 2}
-  materialsPath: []
+  materialsPath:
+  - Assets/MATERIALS/dark_torquise.mat
   currentMaterialIndex: 0
   renderableMesh:
-    name: UM_OperatedMesh_6074df78-79df-417f-8288-103bb9e00dea
+    name: UM_OperatedMesh_a2ca1564-1961-4d0d-974b-10dde148436f
     skinnedMesh: 0
     sharedMesh: {fileID: -3110919476592414947}
     buidVersion:
@@ -66,7 +67,7 @@ MonoBehaviour:
       IndexVersion: 0
       OptimizedTopology: 0
   sourceMesh: {fileID: 0}
-  sourceMeshRendererGUID: 6074df78-79df-417f-8288-103bb9e00dea
+  sourceMeshRendererGUID: a2ca1564-1961-4d0d-974b-10dde148436f
   guid: 455101d2-38af-47aa-9f1a-624895fb2436
   localOptions:
     RecalculateTangents: 0
@@ -188,7 +189,7 @@ MonoBehaviour:
   - Assets/MATERIALS/white.mat
   currentMaterialIndex: 0
   renderableMesh:
-    name: UM_OperatedMesh_fade3966-d484-434a-961c-b3828ce16da3
+    name: UM_OperatedMesh_bec0eb30-d28b-4aa9-991a-4dace6bde365
     skinnedMesh: 0
     sharedMesh: {fileID: -8975171615423900755}
     buidVersion:
@@ -200,7 +201,7 @@ MonoBehaviour:
       IndexVersion: 0
       OptimizedTopology: 0
   sourceMesh: {fileID: 0}
-  sourceMeshRendererGUID: fade3966-d484-434a-961c-b3828ce16da3
+  sourceMeshRendererGUID: bec0eb30-d28b-4aa9-991a-4dace6bde365
   guid: 5e584df6-37d5-40b7-bfc8-3cba9af1bdb3
   localOptions:
     RecalculateTangents: 0
