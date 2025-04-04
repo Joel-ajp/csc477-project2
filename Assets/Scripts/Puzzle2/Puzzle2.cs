@@ -176,8 +176,6 @@ public class TrainSeatCombinationPuzzle : MonoBehaviour
     {
         isPuzzleCompleted = true;
         
-        print("Great success".ToString());
-
         // Play success sound if available
         if (successSound != null)
         {
