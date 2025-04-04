@@ -365,7 +365,7 @@ MonoBehaviour:
   - Packages/com.tripolygon.umodeler-x/Editor/Resources/Materials/UModelerX_Gray_URP.mat
   currentMaterialIndex: 0
   renderableMesh:
-    name: UM_OperatedMesh_11e02535-0e1e-4d5b-8899-6ce9a4e611f9
+    name: UM_OperatedMesh_8cd0d1ed-1e88-4bd5-b831-b933994932b0
     skinnedMesh: 0
     sharedMesh: {fileID: 4300000, guid: 634ffedc54d480840bc94504ab75590c, type: 2}
     buidVersion:
@@ -377,7 +377,7 @@ MonoBehaviour:
       IndexVersion: 0
       OptimizedTopology: 0
   sourceMesh: {fileID: 0}
-  sourceMeshRendererGUID: 11e02535-0e1e-4d5b-8899-6ce9a4e611f9
+  sourceMeshRendererGUID: 8cd0d1ed-1e88-4bd5-b831-b933994932b0
   guid: d02d5955-dccd-4ba4-a6e8-fc70d104d4e9
   localOptions:
     RecalculateTangents: 0
@@ -492,7 +492,7 @@ Transform:
   m_GameObject: {fileID: 481925341}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 15.98}
+  m_LocalPosition: {x: 6.26, y: 1.64, z: 0}
   m_LocalScale: {x: 1, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -628,6 +628,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: room 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1106249234334517094, guid: 2ba17eef6f5c5954c9f08d4793a63721, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4304096328225184828, guid: 2ba17eef6f5c5954c9f08d4793a63721, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -729,6 +733,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6532011257553007202, guid: 995b70997be269e49849673a04d7657c, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 9213975212748651276, guid: 995b70997be269e49849673a04d7657c, type: 3}
+    - target: {fileID: 6632076939200739708, guid: 995b70997be269e49849673a04d7657c, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -5050534513281359532, guid: 995b70997be269e49849673a04d7657c, type: 3}
+    - target: {fileID: 6997160757801221670, guid: 995b70997be269e49849673a04d7657c, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4174673950240421631, guid: 995b70997be269e49849673a04d7657c, type: 3}
+    - target: {fileID: 8737757947931011848, guid: 995b70997be269e49849673a04d7657c, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -1206488189570902087, guid: 995b70997be269e49849673a04d7657c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
