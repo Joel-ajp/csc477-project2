@@ -411,7 +411,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &481925342
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -616,7 +616,7 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1001 &1796044435200753016
+--- !u!1001 &1858369551
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -627,10 +627,6 @@ PrefabInstance:
     - target: {fileID: 1106249234334517094, guid: 2ba17eef6f5c5954c9f08d4793a63721, type: 3}
       propertyPath: m_Name
       value: room 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1106249234334517094, guid: 2ba17eef6f5c5954c9f08d4793a63721, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4304096328225184828, guid: 2ba17eef6f5c5954c9f08d4793a63721, type: 3}
       propertyPath: m_LocalPosition.x
@@ -762,4 +758,4 @@ SceneRoots:
   - {fileID: 481925345}
   - {fileID: 1164420770}
   - {fileID: 8570585111386082883}
-  - {fileID: 1796044435200753016}
+  - {fileID: 1858369551}
