@@ -92,12 +92,6 @@ public class TrainSeatCombinationPuzzle : MonoBehaviour
                 correctCombination[i] = puzzleSymbols[i].benchNumber;
             }
         }
-        
-        // Debug log to help with testing
-        Debug.Log($"Puzzle Solution - " +
-                  $"Symbol 1: {puzzleSymbols[0].symbolName} on Bench {puzzleSymbols[0].benchNumber}, " +
-                  $"Symbol 2: {puzzleSymbols[1].symbolName} on Bench {puzzleSymbols[1].benchNumber}, " +
-                  $"Symbol 3: {puzzleSymbols[2].symbolName} on Bench {puzzleSymbols[2].benchNumber}");
     }
 
     private void InitializeSymbolDisplays()
