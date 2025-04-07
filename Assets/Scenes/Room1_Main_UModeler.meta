@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/Scenes/Room1_Main_UModeler.meta
 guid: 4dafc254f6f76bb44af67ff413afe3ea
+========
+guid: 44cc77a500935994f98370b3f75969aa
+>>>>>>>> Stashed changes:Assets/Scenes/ART SCENE- for modeling purposes.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
