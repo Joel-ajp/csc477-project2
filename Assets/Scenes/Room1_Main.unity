@@ -855,6 +855,7 @@ GameObject:
   - component: {fileID: 760295556}
   - component: {fileID: 760295558}
   - component: {fileID: 760295557}
+  - component: {fileID: 760295559}
   m_Layer: 0
   m_Name: Socket 2
   m_TagString: Untagged
@@ -928,10 +929,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 760295559}
+        m_TargetAssemblyTypeName: Puzzle1Key, Assembly-CSharp
+        m_MethodName: incrementPuzzle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 760295559}
+        m_TargetAssemblyTypeName: Puzzle1Key, Assembly-CSharp
+        m_MethodName: decrementPuzzle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_ShowInteractableHoverMeshes: 1
@@ -945,6 +970,18 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!114 &760295559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760295555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6081499b45b2b754c9c87acb8ea48b11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &992922592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,6 +1131,111 @@ Transform:
   m_Children: []
   m_Father: {fileID: 760295556}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1128011101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1128011102}
+  - component: {fileID: 1128011105}
+  - component: {fileID: 1128011104}
+  - component: {fileID: 1128011103}
+  m_Layer: 0
+  m_Name: Lock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1128011102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128011101}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -1.44, y: 4.92, z: -1.28}
+  m_LocalScale: {x: 0.88294, y: 1, z: 1.3160573}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1683423808949191385}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!65 &1128011103
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128011101}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10.000002, y: 3.554934e-13, z: 10.000004}
+  m_Center: {x: 0, y: 0.00000035762787, z: -0.00000023841858}
+--- !u!23 &1128011104
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128011101}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1128011105
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128011101}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1278223692
 GameObject:
   m_ObjectHideFlags: 0
@@ -1836,6 +1978,7 @@ GameObject:
   - component: {fileID: 2054330329}
   - component: {fileID: 2054330331}
   - component: {fileID: 2054330330}
+  - component: {fileID: 2054330332}
   m_Layer: 0
   m_Name: Socket 1
   m_TagString: Untagged
@@ -1909,10 +2052,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2054330332}
+        m_TargetAssemblyTypeName: Puzzle1Key, Assembly-CSharp
+        m_MethodName: incrementPuzzle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2054330332}
+        m_TargetAssemblyTypeName: Puzzle1Key, Assembly-CSharp
+        m_MethodName: decrementPuzzle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_ShowInteractableHoverMeshes: 1
@@ -1926,6 +2093,18 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!114 &2054330332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054330328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6081499b45b2b754c9c87acb8ea48b11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2110653823
 GameObject:
   m_ObjectHideFlags: 0
@@ -1937,6 +2116,7 @@ GameObject:
   - component: {fileID: 2110653824}
   - component: {fileID: 2110653826}
   - component: {fileID: 2110653825}
+  - component: {fileID: 2110653827}
   m_Layer: 0
   m_Name: Socket 3
   m_TagString: Untagged
@@ -2010,10 +2190,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2110653827}
+        m_TargetAssemblyTypeName: Puzzle1Key, Assembly-CSharp
+        m_MethodName: incrementPuzzle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2110653827}
+        m_TargetAssemblyTypeName: Puzzle1Key, Assembly-CSharp
+        m_MethodName: decrementPuzzle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_ShowInteractableHoverMeshes: 1
@@ -2027,6 +2231,18 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!114 &2110653827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110653823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6081499b45b2b754c9c87acb8ea48b11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &12220793391130054
 GameObject:
   m_ObjectHideFlags: 0
@@ -2335,6 +2551,7 @@ GameObject:
   - component: {fileID: 892346404279076897}
   - component: {fileID: 1278928309272167754}
   - component: {fileID: 511283154481440316}
+  - component: {fileID: 2440307462393758924}
   m_Layer: 0
   m_Name: tunrstile half two
   m_TagString: Untagged
@@ -5344,6 +5561,7 @@ Transform:
   - {fileID: 6293804555047909746}
   - {fileID: 6596167935268527966}
   - {fileID: 1082921718600752341}
+  - {fileID: 1128011102}
   m_Father: {fileID: 3810730855520086432}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!23 &1716143983040887211
@@ -6586,6 +6804,28 @@ Transform:
   - {fileID: 1045727744434730352}
   m_Father: {fileID: 1082921718600752341}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!64 &2440307462393758924
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79574722460963136}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: f8d2f24735ff085458e6baa23b1292b5, type: 2}
 --- !u!33 &2462555730421942966
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12134,6 +12374,7 @@ GameObject:
   - component: {fileID: 1473913446613504963}
   - component: {fileID: 4527729202627391699}
   - component: {fileID: 5231304029544169016}
+  - component: {fileID: 9086060359385869278}
   m_Layer: 0
   m_Name: tunrstile half two
   m_TagString: Untagged
@@ -13483,6 +13724,7 @@ GameObject:
   - component: {fileID: 558976337704368463}
   - component: {fileID: 5645672721724137311}
   - component: {fileID: 6241664648110919391}
+  - component: {fileID: 6396506668950747060}
   m_Layer: 0
   m_Name: tunrstile (1)
   m_TagString: Untagged
@@ -13490,6 +13732,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &6396506668950747060
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6396506668950747059}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: e4402576f6e277b4fb8767dc9ead75ce, type: 2}
 --- !u!23 &6397231818602242700
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14310,6 +14574,7 @@ GameObject:
   - component: {fileID: 8640929655135766938}
   - component: {fileID: 7880533692031214216}
   - component: {fileID: 1048485875311303972}
+  - component: {fileID: 8640929655135766939}
   m_Layer: 0
   m_Name: tunrstile (1)
   m_TagString: Untagged
@@ -15609,6 +15874,7 @@ GameObject:
   - component: {fileID: 4492267489923060797}
   - component: {fileID: 6418610515226354755}
   - component: {fileID: 7648712861129636216}
+  - component: {fileID: 7703539380879656462}
   m_Layer: 0
   m_Name: tunrstile
   m_TagString: Untagged
@@ -15616,6 +15882,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &7703539380879656462
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7703539380879656461}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 5fdc41237b2bf744190dd70585893276, type: 2}
 --- !u!64 &7771147343643301816
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16881,6 +17169,7 @@ GameObject:
   - component: {fileID: 599747615218207316}
   - component: {fileID: 5213510677761868351}
   - component: {fileID: 2854104684649866612}
+  - component: {fileID: 8459454180562480665}
   m_Layer: 0
   m_Name: tunrstile
   m_TagString: Untagged
@@ -16888,6 +17177,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &8459454180562480665
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8459454180562480664}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 0ca8ace64fc8f844eb47eda33af3c9e2, type: 2}
 --- !u!114 &8489267558880646322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17173,6 +17484,28 @@ MonoBehaviour:
   modifierStack:
     modifierList: []
     currentIndex: -1
+--- !u!64 &8640929655135766939
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6880256174546745445}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: a5ff87a046780084fa2f2613e374ec91, type: 2}
 --- !u!64 &8643533624463386471
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17194,7 +17527,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 682463030641621252, guid: 20c4f67bd560f0b4fad59c6fbdc01916, type: 3}
+  m_Mesh: {fileID: 4300000, guid: eecb37b9d5fa7e942bf77e81b08f92cd, type: 2}
 --- !u!1 &8653101012094945845
 GameObject:
   m_ObjectHideFlags: 0
@@ -17989,6 +18322,28 @@ Transform:
   - {fileID: 1776810847289654836}
   m_Father: {fileID: 6596167935268527966}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!64 &9086060359385869278
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5867766791820740674}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 2d3699c044e334f47894050835eed03f, type: 2}
 --- !u!4 &9088898277194085924
 Transform:
   m_ObjectHideFlags: 0
