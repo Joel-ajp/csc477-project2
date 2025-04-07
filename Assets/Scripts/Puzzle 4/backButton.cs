@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class backButton : MonoBehaviour {
     public GameObject HomeScreen;
@@ -12,6 +13,8 @@ public class backButton : MonoBehaviour {
     public GameObject GovernmentEntityUI;
     public GameObject JournalEntries;
     public GameObject TrainControls;
+    public TMP_InputField inputField;
+    public passwordCheck passCheckFunc;
 
     public void goBack() {
         if (ClassifiedScreen.activeSelf) {
@@ -38,6 +41,12 @@ public class backButton : MonoBehaviour {
         } else if (TrainControls.activeSelf) {
             TrainControls.SetActive(false);
             HomeScreen.SetActive(true);
+        }
+    }
+
+    public void pressEnter() {
+        if ((GovernmentEntityUI.activeSelf) && (inputField != null)) {
+            passCheckFunc.CheckPass(inputField.text);
         }
     }
 }
