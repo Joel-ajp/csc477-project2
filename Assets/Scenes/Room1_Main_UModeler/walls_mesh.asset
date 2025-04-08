@@ -11,16 +11,6 @@ Mesh:
   m_SubMeshes:
   - serializedVersion: 2
     firstByte: 0
-    indexCount: 60
-    topology: 0
-    baseVertex: 0
-    firstVertex: 4
-    vertexCount: 64
-    localAABB:
-      m_Center: {x: 4826.1855, y: -0.68359375, z: 0}
-      m_Extent: {x: 16448.107, y: 2440.9922, z: 5000}
-  - serializedVersion: 2
-    firstByte: 120
     indexCount: 12
     topology: 0
     baseVertex: 0
@@ -30,15 +20,25 @@ Mesh:
       m_Center: {x: -4000.7578, y: -2430.7559, z: -2500}
       m_Extent: {x: 7621.164, y: 10.919922, z: 2500}
   - serializedVersion: 2
-    firstByte: 144
-    indexCount: 36
+    firstByte: 24
+    indexCount: 0
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 0
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+  - serializedVersion: 2
+    firstByte: 24
+    indexCount: 96
     topology: 0
     baseVertex: 0
     firstVertex: 0
     vertexCount: 72
     localAABB:
-      m_Center: {x: 7436.052, y: -0.68359375, z: 2486.766}
-      m_Extent: {x: 13838.241, y: 2440.9922, z: 2513.234}
+      m_Center: {x: 4826.1855, y: -0.68359375, z: 0}
+      m_Extent: {x: 16448.107, y: 2440.9922, z: 5000}
   m_Shapes:
     vertices: []
     shapes: []
@@ -55,7 +55,7 @@ Mesh:
   m_KeepVertices: 1
   m_KeepIndices: 1
   m_IndexFormat: 0
-  m_IndexBuffer: 0400070006000400060005000f000c000d000f000d000e001700140015001700150016001b00180019001b0019001a001f001c001d001f001d001e002300200021002300210022002700240025002700250026002c002f002e002c002e002d0030003300320030003200310043004000410043004100420010001300120010001200110028002b002a0028002a0029000000030002000000020001000b00080009000b0009000a003700340035003700350036003b00380039003b0039003a003f003c003d003f003d003e00470044004500470045004600
+  m_IndexBuffer: 10001300120010001200110028002b002a0028002a0029000000030002000000020001000400070006000400060005000b00080009000b0009000a000f000c000d000f000d000e001700140015001700150016001b00180019001b0019001a001f001c001d001f001d001e002300200021002300210022002700240025002700250026002c002f002e002c002e002d003000330032003000320031003700340035003700350036003b00380039003b0039003a003f003c003d003f003d003e00430040004100430041004200470044004500470045004600
   m_VertexData:
     serializedVersion: 3
     m_VertexCount: 72
