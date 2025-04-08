@@ -1,24 +1,30 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
+using UnityEngine.Events;
 
 public class TrainSeatCombinationPuzzle : MonoBehaviour
 {
     [System.Serializable]
     public class SeatSymbol
     {
-        public int seatNumber;
-        public Sprite symbolSprite;
-        public string symbolName;
+        public GameObject symbolObject; // GameObject representation of the symbol
+        public int benchNumber; // Hard-coded bench number
+        public string symbolName; // For debugging/reference
     }
 
     [Header("Puzzle Configuration")]
-    public SeatSymbol[] availableSeats;
-    public Image[] symbolDisplays;
-    public Text[] digitInputs;
-    public Button submitButton;
+    public SeatSymbol[] puzzleSymbols; // Predefined symbols with bench assignments
+    public GameObject[] symbolDisplayObjects; // GameObjects to display the symbols
+    public CounterButton[] counterButtons; // References to the counter button scripts
+    public DoorController doorController; // Drag door here in Inspector
+    
+    [Header("Objects To Disable")]
+    public MonoBehaviour[] scriptsToDisableOnComplete;
+    public GameObject[] objectsToDisableOnComplete;
+    public Collider[] collidersToDisableOnComplete;
 
     [Header("Combination Lock")]
-    public int[] correctCombination = new int[3];
+    private int[] correctCombination = new int[3]; // Will be populated from puzzleSymbols
     private int[] currentCombination = new int[3];
 
     [Header("Feedback")]
@@ -26,65 +32,120 @@ public class TrainSeatCombinationPuzzle : MonoBehaviour
     public AudioSource successSound;
     public AudioSource errorSound;
 
+    [Header("Puzzle Complete Event")]
+    public UnityEvent onPuzzleComplete;
+
+    private bool isPuzzleCompleted = false;
+    private bool isCheckingCombination = false;
+
     private void Start()
     {
-        // Randomize the correct combination using seat numbers
-        SetUpRandomCombination();
-
-        // Setup submit button listener
-        submitButton.onClick.AddListener(CheckCombination);
-
+        // Setup the puzzle with hard-coded values
+        SetUpPuzzle();
+        
         // Initialize UI elements
         InitializeSymbolDisplays();
     }
 
-    private void SetUpRandomCombination()
+    private void Update()
     {
-        // Randomly select 3 unique seats for the combination
-        for (int i = 0; i < 3; i++)
+        // Check combination automatically every frame
+        if (!isPuzzleCompleted && !isCheckingCombination)
         {
-            SeatSymbol randomSeat = availableSeats[Random.Range(0, availableSeats.Length)];
-            correctCombination[i] = randomSeat.seatNumber;
+            // Update current combination from counter buttons
+            UpdateCurrentCombinationFromCounters();
+            
+            // Check if the combination is correct
+            CheckCombination();
+        }
+    }
+
+    private void UpdateCurrentCombinationFromCounters()
+    {
+        // Read current values from counter buttons
+        if (counterButtons != null)
+        {
+            for (int i = 0; i < counterButtons.Length && i < 3; i++)
+            {
+                if (counterButtons[i] != null)
+                {
+                    currentCombination[i] = counterButtons[i].GetCounter();
+                }
+            }
+        }
+    }
+
+    private void SetUpPuzzle()
+    {
+        // Validate setup
+        if (puzzleSymbols == null || puzzleSymbols.Length < 3)
+        {
+            Debug.LogError("Not enough puzzle symbols defined. Need at least 3.");
+            return;
         }
 
-        // Debug log to help developers track the solution
-        Debug.Log($"Correct Combination: {correctCombination[0]}, {correctCombination[1]}, {correctCombination[2]}");
+        // Extract the correct combination from the hard-coded values
+        for (int i = 0; i < 3; i++)
+        {
+            if (i < puzzleSymbols.Length)
+            {
+                correctCombination[i] = puzzleSymbols[i].benchNumber;
+            }
+        }
     }
 
     private void InitializeSymbolDisplays()
     {
-        // Randomize the symbols for each input position
+        // Make sure we have the correct number of display objects
+        if (symbolDisplayObjects == null || symbolDisplayObjects.Length < 3)
+        {
+            Debug.LogError("Missing required symbol display objects.");
+            return;
+        }
+
+        // Setup each symbol display
         for (int i = 0; i < 3; i++)
         {
-            // Find the seat corresponding to the correct combination digit
-            SeatSymbol matchingSeat = System.Array.Find(availableSeats, 
-                seat => seat.seatNumber == correctCombination[i]);
+            // Enable the corresponding symbol GameObject if it exists
+            if (i < puzzleSymbols.Length && puzzleSymbols[i].symbolObject != null)
+            {
+                // Option 1: Enable the display object
+                if (symbolDisplayObjects[i] != null)
+                {
+                    symbolDisplayObjects[i].SetActive(true);
+                }
+            }
             
-            // Set the symbol display
-            symbolDisplays[i].sprite = matchingSeat.symbolSprite;
+            // Initialize counter buttons if they exist
+            if (counterButtons != null && i < counterButtons.Length && counterButtons[i] != null)
+            {
+                // Set initial value to 1
+                counterButtons[i].SetCounter(1);
+                currentCombination[i] = 1;
+            }
         }
     }
 
     public void UpdateDigit(int inputIndex, bool increment)
     {
-        // Increment or decrement the digit (0-9)
-        int currentValue = int.Parse(digitInputs[inputIndex].text);
-        
-        if (increment)
-        {
-            currentValue = (currentValue + 1) % 10;
-        }
-        else
-        {
-            currentValue = (currentValue - 1 + 10) % 10;
-        }
+        if (isPuzzleCompleted || inputIndex >= 3)
+            return;
 
-        digitInputs[inputIndex].text = currentValue.ToString();
-        currentCombination[inputIndex] = currentValue;
+        // This is called from the CounterButton script
+        // The counter script already updates its own value and text
+        // We just need to update our internal tracking
+        
+        // Read the new value directly from the counter button
+        if (counterButtons != null && inputIndex < counterButtons.Length && counterButtons[inputIndex] != null)
+        {
+            currentCombination[inputIndex] = counterButtons[inputIndex].GetCounter();
+        }
     }
 
     private void CheckCombination()
     {
+        isCheckingCombination = true;
+        
         bool isCorrect = true;
         
         // Check if all digits match the correct combination
@@ -96,32 +157,82 @@ public class TrainSeatCombinationPuzzle : MonoBehaviour
                 break;
             }
         }
-
-        if (isCorrect)
+        
+        if (isCorrect && !isPuzzleCompleted)
         {
             // Puzzle solved successfully
-            successSound.Play();
-            successPanel.SetActive(true);
-            // You can add additional logic here, like unlocking the door
+            CompletePuzzle();
         }
-        else
+        
+        isCheckingCombination = false;
+    }
+
+    private void CompletePuzzle()
+    {
+
+        isPuzzleCompleted = true;
+
+        // your existing success sound, success panel, disable logic...
+        doorController?.RaiseDoor();
+        
+        // Play success sound if available
+        if (successSound != null)
         {
-            // Incorrect combination
-            errorSound.Play();
+            successSound.Play();
+        }
+        
+        // Show success panel if available
+        if (successPanel != null)
+        {
+            successPanel.SetActive(true);
+        }
+        
+        // Disable interactive objects
+        DisableInteractableObjects();
+        
+        // Trigger the puzzle complete event
+        if (onPuzzleComplete != null)
+        {
+            onPuzzleComplete.Invoke();
         }
     }
 
-    // Optional: Method to reset the puzzle
-    public void ResetPuzzle()
+    private void DisableInteractableObjects()
     {
-        SetUpRandomCombination();
-        InitializeSymbolDisplays();
-        
-        // Reset digit inputs
-        for (int i = 0; i < 3; i++)
+        // Disable scripts
+        if (scriptsToDisableOnComplete != null)
         {
-            digitInputs[i].text = "0";
-            currentCombination[i] = 0;
+            foreach (MonoBehaviour script in scriptsToDisableOnComplete)
+            {
+                if (script != null)
+                {
+                    script.enabled = false;
+                }
+            }
+        }
+        
+        // Disable GameObjects
+        if (objectsToDisableOnComplete != null)
+        {
+            foreach (GameObject obj in objectsToDisableOnComplete)
+            {
+                if (obj != null)
+                {
+                    obj.SetActive(false);
+                }
+            }
+        }
+        
+        // Disable Colliders
+        if (collidersToDisableOnComplete != null)
+        {
+            foreach (Collider collider in collidersToDisableOnComplete)
+            {
+                if (collider != null)
+                {
+                    collider.enabled = false;
+                }
+            }
         }
     }
 }
