@@ -5217,6 +5217,8 @@ GameObject:
   - component: {fileID: 1092555254}
   - component: {fileID: 1092555253}
   - component: {fileID: 1092555252}
+  - component: {fileID: 1092555256}
+  - component: {fileID: 1092555255}
   m_Layer: 0
   m_Name: invisable box
   m_TagString: Untagged
@@ -5338,6 +5340,49 @@ MonoBehaviour:
   modifierStack:
     modifierList: []
     currentIndex: -1
+--- !u!65 &1092555255
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092555250}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.241517, y: 0.544266, z: 6.556815}
+  m_Center: {x: -3.1207592, y: 1.806317, z: -3.5546873}
+--- !u!64 &1092555256
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092555250}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: c05b6cd32c73bfb4790b2dff98114066, type: 2}
 --- !u!1001 &1107126793
 PrefabInstance:
   m_ObjectHideFlags: 0
