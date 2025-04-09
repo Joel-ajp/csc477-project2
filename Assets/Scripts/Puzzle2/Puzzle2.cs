@@ -17,7 +17,7 @@ public class TrainSeatCombinationPuzzle : MonoBehaviour
     public GameObject[] symbolDisplayObjects; // GameObjects to display the symbols
     public CounterButton[] counterButtons; // References to the counter button scripts
     public DoorController doorController; // Drag door here in Inspector
-    
+   
     [Header("Objects To Disable")]
     public MonoBehaviour[] scriptsToDisableOnComplete;
     public GameObject[] objectsToDisableOnComplete;
@@ -174,6 +174,7 @@ public class TrainSeatCombinationPuzzle : MonoBehaviour
 
         // your existing success sound, success panel, disable logic...
         doorController?.RaiseDoor();
+        print("puzzle done");
         
         // Play success sound if available
         if (successSound != null)

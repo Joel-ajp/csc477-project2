@@ -15,6 +15,7 @@ public class DoorController : MonoBehaviour
 
     public void RaiseDoor()
     {
+        print("raising door");
         if (!doorIsRaised)
         {
             // One option: simple coroutine that lerps the door upward
@@ -31,6 +32,7 @@ public class DoorController : MonoBehaviour
 
         while (elapsed < duration)
         {
+            print("WHILE - raising door");
             elapsed += Time.deltaTime;
             float t = elapsed / duration;
             transform.position = Vector3.Lerp(startPos, targetPos, t);
