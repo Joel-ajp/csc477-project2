@@ -10428,9 +10428,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545916434}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.69409716, y: -0.13010146, z: -0.13960999, w: 0.6941267}
-  m_LocalPosition: {x: 4789.2, y: -5584, z: -349}
-  m_LocalScale: {x: -99.33124, y: 99.331245, z: 99.331245}
+  m_LocalRotation: {x: 0.69409716, y: 0.13010147, z: 0.13961, w: -0.6941267}
+  m_LocalPosition: {x: 4778, y: -5567, z: -349}
+  m_LocalScale: {x: -91.605255, y: 91.60526, z: 91.60526}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 335516626}
@@ -15314,13 +15314,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707417897}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.68908, y: -0.15864675, z: -0.15864675, w: 0.68908}
-  m_LocalPosition: {x: -1540, y: -4907, z: 2355}
-  m_LocalScale: {x: 75.50468, y: 75.50468, z: 75.50468}
+  m_LocalRotation: {x: -0.69409716, y: -0.13010146, z: -0.13960999, w: 0.6941267}
+  m_LocalPosition: {x: -1477, y: -4897, z: 2387}
+  m_LocalScale: {x: -91.605255, y: 91.60526, z: 91.60526}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1371166054}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -25.931}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 202.375}
 --- !u!212 &707417899
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15511,9 +15511,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6081499b45b2b754c9c87acb8ea48b11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animController1: {fileID: 0}
-  animController2: {fileID: 0}
-  animController3: {fileID: 0}
+  animController1: {fileID: 989595879}
+  animController2: {fileID: 639291936}
+  animController3: {fileID: 2099770669}
 --- !u!114 &761153890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66874,13 +66874,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785186441}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.40416715, y: 0.5867549, z: -0.5797021, w: -0.3953645}
-  m_LocalPosition: {x: 17857, y: -5594, z: -2275}
-  m_LocalScale: {x: 79.83393, y: 79.83393, z: 79.83393}
+  m_LocalRotation: {x: 0.6939703, y: 0.1307304, z: 0.14023897, w: -0.6940085}
+  m_LocalPosition: {x: 17859, y: -5581, z: -2249}
+  m_LocalScale: {x: -93.13644, y: 93.136444, z: 93.136444}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 469766965}
-  m_LocalEulerAnglesHint: {x: 89.086, y: 163.131, z: -85.726}
+  m_LocalEulerAnglesHint: {x: -89.23, y: 78.723, z: -100.816}
 --- !u!212 &1785186443
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -79220,9 +79220,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6081499b45b2b754c9c87acb8ea48b11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animController1: {fileID: 0}
-  animController2: {fileID: 0}
-  animController3: {fileID: 0}
+  animController1: {fileID: 989595879}
+  animController2: {fileID: 639291936}
+  animController3: {fileID: 2099770669}
 --- !u!1 &2064896036
 GameObject:
   m_ObjectHideFlags: 0
@@ -80044,9 +80044,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6081499b45b2b754c9c87acb8ea48b11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animController1: {fileID: 0}
-  animController2: {fileID: 0}
-  animController3: {fileID: 0}
+  animController1: {fileID: 989595879}
+  animController2: {fileID: 639291936}
+  animController3: {fileID: 2099770669}
 --- !u!1 &12220793391130054
 GameObject:
   m_ObjectHideFlags: 0
@@ -82184,7 +82184,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: fc1a9beb62772b0469021f7519db25d6, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 173ddf285294ece4281f33644ea7cd2f, type: 2}
 --- !u!4 &716149812858843669
 Transform:
   m_ObjectHideFlags: 0
@@ -84435,7 +84435,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: e9bcd4709862df448bb70f11153e6118, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 4b3bc414b1c4c2b43988d0e47464e250, type: 2}
 --- !u!23 &1523712721371824499
 MeshRenderer:
   m_ObjectHideFlags: 0
