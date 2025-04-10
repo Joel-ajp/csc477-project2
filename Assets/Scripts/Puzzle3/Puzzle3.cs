@@ -199,6 +199,8 @@ public class Puzzle3 : MonoBehaviour
     public XRSocketInteractor DSocket;
     public XRSocketInteractor ESocket;
 
+    public DoorController doorController;
+
     public int sharedIn = 30;
     public int sharedOut = 30;
 
@@ -207,7 +209,13 @@ public class Puzzle3 : MonoBehaviour
 
     public void ChangeTest()
     {
-        print($"Did the change work? {Test()}");
+        bool didSucceed = Test();
+        print($"Did the change work? {didSucceed}");
+
+        if (didSucceed)
+        {
+            doorController?.RaiseDoor();
+        }
     }
 
     public void ChangeSlot(string slot, SelectEnterEventArgs args)
