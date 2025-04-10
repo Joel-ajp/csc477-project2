@@ -349,7 +349,7 @@ public class Puzzle3 : MonoBehaviour
         
     }
 
-    private void OnDrawGizmosSelected()
+    /*private void OnDrawGizmosSelected()
     {
         VoltSlot slot = pIn;
 
@@ -400,5 +400,5 @@ public class Puzzle3 : MonoBehaviour
         }
 
         Handles.Label(transform.position + Vector3.up * 1 + Vector3.right * i, $"VIn:{slot.component.voltIn}\nVOut:{slot.component.voltOut}\nID:{slot.ID}");
-    }
+    }*/
 }
