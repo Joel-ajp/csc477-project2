@@ -83,11 +83,6 @@ public class Puzzle1Key : MonoBehaviour
             Debug.Log("Puzzle 1 solved");
             Lock.SetActive(false); // This disables the entire GameObject
 
-            // Optional: just disable the collider instead
-            Collider lockCollider = Lock.GetComponent<Collider>();
-            if (lockCollider != null)
-                lockCollider.enabled = false;
-
             SetAnimations(true);
             MoveDoorsByOffset(doorSet1, positionOffsets1, rotationOffsets1);
             MoveDoorsByOffset(doorSet2, positionOffsets2, rotationOffsets2);
