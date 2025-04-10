@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public interface IVoltSlot
 {
@@ -13,6 +15,7 @@ public class VoltSlot : IVoltSlot
     public VoltComponent component;
     public VoltSlot next;
     public VoltSlot previous;
+
     public int ID = 0;
 
     public static int curID = 0;
@@ -170,6 +173,11 @@ public class VoltComponent
         voltIn = vIn;
         voltOut = vOut;
     }
+
+    public override string ToString()
+    {
+        return $"VoltComponent({voltIn}:{voltOut})";
+    }
 }
 
 public class Puzzle3 : MonoBehaviour
@@ -177,17 +185,74 @@ public class Puzzle3 : MonoBehaviour
     List<VoltSlot> slots = new();
     List<VoltSlot> endSlots = new();
 
+    Dictionary<string, VoltSlot> namedSlots = new();
+
     VoltSlot pIn;
     VoltSlot pOut;
     VoltSlot secIn;
     VoltSlot secOut;
     VoltSlotMulti shared;
 
+    public XRSocketInteractor ASocket;
+    public XRSocketInteractor BSocket;
+    public XRSocketInteractor CSocket;
+    public XRSocketInteractor DSocket;
+    public XRSocketInteractor ESocket;
+
     public int sharedIn = 30;
     public int sharedOut = 30;
 
     public int vPOut = 30;
     public int vSecOut = 12;
+
+    public void ChangeTest()
+    {
+        print($"Did the change work? {Test()}");
+    }
+
+    public void ChangeSlot(string slot, SelectEnterEventArgs args)
+    {
+        namedSlots[slot].component = args.interactableObject.transform.GetComponent<VoltObject>().GetVoltComponent();
+    }
+
+    public void SocketA(SelectEnterEventArgs args)
+    {
+        namedSlots["A"].component = args.interactableObject.transform.GetComponent<VoltObject>().GetVoltComponent();
+        print($"Changing A {namedSlots["A"].component}");
+        ChangeTest();
+    }
+
+    public void SocketB(SelectEnterEventArgs args)
+    {
+        namedSlots["B"].component = args.interactableObject.transform.GetComponent<VoltObject>().GetVoltComponent();
+        print($"Changing B {namedSlots["B"].component}");
+        ChangeTest();
+    }
+
+    public void SocketC(SelectEnterEventArgs args)
+    {
+        namedSlots["C"].component = args.interactableObject.transform.GetComponent<VoltObject>().GetVoltComponent();
+        print($"Changing C {namedSlots["C"].component}");
+        ChangeTest();
+    }
+    public void SocketD(SelectEnterEventArgs args)
+    {
+        namedSlots["D"].component = args.interactableObject.transform.GetComponent<VoltObject>().GetVoltComponent();
+        print($"Changing D {namedSlots["D"].component}");
+        ChangeTest();
+    }
+    public void SocketE(SelectEnterEventArgs args)
+    {
+        namedSlots["E"].component = args.interactableObject.transform.GetComponent<VoltObject>().GetVoltComponent();
+        print($"Changing E {namedSlots["E"].component}");
+        ChangeTest();
+    }
+
+    public void ClearSlot(string slot)
+    {
+        namedSlots[slot].component = null;
+        ChangeTest();
+    }
 
     bool TestSlot(VoltSlot testSlot)
     {
@@ -245,11 +310,27 @@ public class Puzzle3 : MonoBehaviour
         endSlots.Add(pOut);
         endSlots.Add(secOut);
 
-        shared = new(30, 30);
+        shared = new();
 
-        pIn.NextSlot(625, 30).NextSlot(30, 30).NextSlot(shared).NextSlot(pOut); // shared = 3rd nextslot
+        namedSlots.Add("A", new());
+        namedSlots.Add("B", new());
+        namedSlots.Add("C", shared);
+        namedSlots.Add("D", new());
+        namedSlots.Add("E", new());
 
-        secIn.NextSlot(12, 30).NextSlot(shared).NextSlot(30, 12).NextSlot(secOut); // shared = 2rd nextslot
+        ASocket.selectEntered.AddListener(SocketA);
+        BSocket.selectEntered.AddListener(SocketB);
+        CSocket.selectEntered.AddListener(SocketC);
+        DSocket.selectEntered.AddListener(SocketD);
+        ESocket.selectEntered.AddListener(SocketE);
+
+        pIn.NextSlot(namedSlots["A"]).NextSlot(namedSlots["B"]).NextSlot(namedSlots["C"]).NextSlot(pOut);
+
+        secIn.NextSlot(namedSlots["E"]).NextSlot(namedSlots["C"]).NextSlot(namedSlots["D"]).NextSlot(secOut);
+
+        //pIn.NextSlot(625, 30).NextSlot(30, 30).NextSlot(shared).NextSlot(pOut); // shared = 3rd nextslot
+
+        //secIn.NextSlot(12, 30).NextSlot(shared).NextSlot(30, 12).NextSlot(secOut); // shared = 2rd nextslot
 
         print("Did we succeed? " + Test());
     }
