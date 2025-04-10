@@ -55,7 +55,7 @@ MonoBehaviour:
   - Assets/MATERIALS/red.mat
   currentMaterialIndex: 0
   renderableMesh:
-    name: UM_OperatedMesh_d083d72b-9f5f-450b-885d-a6a5f2d2b2bd
+    name: UM_OperatedMesh_bcb86e90-6ffa-4cc8-aa61-5f6c29ab0b8b
     skinnedMesh: 0
     sharedMesh: {fileID: 7257624372351215182}
     buidVersion:
@@ -67,7 +67,7 @@ MonoBehaviour:
       IndexVersion: 0
       OptimizedTopology: 0
   sourceMesh: {fileID: 0}
-  sourceMeshRendererGUID: d083d72b-9f5f-450b-885d-a6a5f2d2b2bd
+  sourceMeshRendererGUID: bcb86e90-6ffa-4cc8-aa61-5f6c29ab0b8b
   guid: 6f5a72e4-c050-4bf7-9ca4-5e99d6682acc
   localOptions:
     RecalculateTangents: 0
@@ -189,7 +189,7 @@ MonoBehaviour:
   - Assets/MATERIALS/main color pallete.mat
   currentMaterialIndex: 0
   renderableMesh:
-    name: UM_OperatedMesh_7b0d2ae9-0f12-46bc-ae56-5dd935a1c301
+    name: UM_OperatedMesh_0de920af-3991-43c2-9ca2-050b547be17d
     skinnedMesh: 0
     sharedMesh: {fileID: -8895432736830514241}
     buidVersion:
@@ -201,7 +201,7 @@ MonoBehaviour:
       IndexVersion: 0
       OptimizedTopology: 0
   sourceMesh: {fileID: 0}
-  sourceMeshRendererGUID: 7b0d2ae9-0f12-46bc-ae56-5dd935a1c301
+  sourceMeshRendererGUID: 0de920af-3991-43c2-9ca2-050b547be17d
   guid: 2933bb2a-ca8b-4268-8e86-f94c893c43a7
   localOptions:
     RecalculateTangents: 0
@@ -284,11 +284,11 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: -8895432736830514241}
+  m_Mesh: {fileID: 0}
 --- !u!1 &3712527101236613568
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,7 +345,7 @@ MonoBehaviour:
   - Assets/MATERIALS/main color pallete.mat
   currentMaterialIndex: 0
   renderableMesh:
-    name: UM_OperatedMesh_602d0ce9-73ba-42d7-8aba-e5fd25092f8c
+    name: UM_OperatedMesh_ef521dd8-11ff-4db0-95e3-a6555ca6e39c
     skinnedMesh: 0
     sharedMesh: {fileID: -1043502339556415175}
     buidVersion:
@@ -357,7 +357,7 @@ MonoBehaviour:
       IndexVersion: 0
       OptimizedTopology: 0
   sourceMesh: {fileID: 0}
-  sourceMeshRendererGUID: 602d0ce9-73ba-42d7-8aba-e5fd25092f8c
+  sourceMeshRendererGUID: ef521dd8-11ff-4db0-95e3-a6555ca6e39c
   guid: e2326cd7-d4f2-4690-b177-265730387d68
   localOptions:
     RecalculateTangents: 0
@@ -440,11 +440,11 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: -1043502339556415175}
+  m_Mesh: {fileID: 0}
 --- !u!1 &4396412795788732369
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,7 +679,7 @@ MonoBehaviour:
   - Assets/MATERIALS/main color pallete.mat
   currentMaterialIndex: 0
   renderableMesh:
-    name: UM_OperatedMesh_9cc03ca1-e069-4d0d-a34c-82d8e52348d9
+    name: UM_OperatedMesh_a6320a8e-8672-4de5-8a55-a76cb150e85f
     skinnedMesh: 0
     sharedMesh: {fileID: 7060120285939134591}
     buidVersion:
@@ -691,7 +691,7 @@ MonoBehaviour:
       IndexVersion: 0
       OptimizedTopology: 0
   sourceMesh: {fileID: 0}
-  sourceMeshRendererGUID: 9cc03ca1-e069-4d0d-a34c-82d8e52348d9
+  sourceMeshRendererGUID: a6320a8e-8672-4de5-8a55-a76cb150e85f
   guid: e2326cd7-d4f2-4690-b177-265730387d68
   localOptions:
     RecalculateTangents: 0
@@ -774,9 +774,9 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7060120285939134591}
 --- !u!1 &6989068637799278947
@@ -834,7 +834,7 @@ MonoBehaviour:
   - Assets/MATERIALS/red.mat
   currentMaterialIndex: 0
   renderableMesh:
-    name: UM_OperatedMesh_180b3793-7c65-40e3-9c27-034e25f2eb4b
+    name: UM_OperatedMesh_60bc899b-c89c-4144-ba33-87328bffb19c
     skinnedMesh: 0
     sharedMesh: {fileID: -7223377997430777747}
     buidVersion:
@@ -846,7 +846,7 @@ MonoBehaviour:
       IndexVersion: 0
       OptimizedTopology: 0
   sourceMesh: {fileID: 0}
-  sourceMeshRendererGUID: 180b3793-7c65-40e3-9c27-034e25f2eb4b
+  sourceMeshRendererGUID: 60bc899b-c89c-4144-ba33-87328bffb19c
   guid: 6f5a72e4-c050-4bf7-9ca4-5e99d6682acc
   localOptions:
     RecalculateTangents: 0
